@@ -15,7 +15,7 @@ class State
     private array $transition;
     private array $inputMap;
 
-    private string|null $input;
+    private string $input;
     private array $payload;
 
     /**
@@ -119,7 +119,7 @@ class State
 
     private function isInputSet(): bool
     {
-        return is_string($this->input);
+        return isset($this->input);
     }
 
     public function __isset($name)
