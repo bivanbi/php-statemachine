@@ -13,7 +13,7 @@ class StateMachine
 {
     private State $defaultState;
     private array $possibleState;
-    private State|null $currentState;
+    private State $currentState;
     private array $stateNameToStateMap;
 
     /**
@@ -149,6 +149,6 @@ class StateMachine
 
     private function isInitialized(): bool
     {
-        return $this->currentState instanceof State;
+        return isset($this->currentState);
     }
 }
